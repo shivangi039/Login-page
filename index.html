@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shivangi Tiwari</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="primary-nav">
+            <div class="logo">
+                <a href="/"><img src="./Images/logo.png"></a> 
+            </div>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li class="active"><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="secondary-header">
+       
+      <nav class="secondary-nav">
+        <h1>Contact us</h1>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">></a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <section class="contact">
+        <div class="contact__content">
+           <h2>Get in touch with us</h2>
+           <h3>Contact us for a website, Mobile application, Digital marketing <br>
+            or IT support.</h3>
+           <ul class="contact__cards">
+               <li>
+                   <img src="./Images/address.png" alt="">
+                   <p>Innovfide Technologies <br>
+                    Anulikha,Anurag Nagar, Tulinj,<br>
+                    Nallasopara East
+                    </p>
+               </li>
+               <li>
+                <img src="./Images/email.png" alt="">
+                <p>bussiness@innovfide.com</p>
+            </li>
+            <li>
+                <img src="./Images/phone.png" alt="">
+                <p>+91 8767484648</p>
+            </li>
+           </ul>
+        </div>
+
+        <div class="contact__content">
+            <form action="#" id="contact__form" method="post">
+                <ul class="contact__form-fields">
+                    <li class="contact__form-field">
+                        <label for="first_name" class="contact__form-label">First Name: <span>*</span></label>
+                        <input class="contact__form-input" id="first_name" name="first_name" type="text" placeholder="Please enter your First Name">
+                        <div class="first_name-error error"></div>
+                    </li>
+
+                    <li class="contact__form-field">
+                        <label for="last_name" class="contact__form-label">Last Name: <span>*</span></label>
+                        <input class="contact__form-input" id="last_name" name="last_name" type="text" placeholder="Please enter your Last Name">
+                        <div class="last_name-error error"></div>
+                    </li>
+
+                    <li class="contact__form-field">
+                        <label for="email" class="contact__form-label">Email: <span>*</span></label>
+                        <input class="contact__form-input" id="email" name="email" type="text" placeholder="Please enter your Email">
+                        <div class="email-error error"></div>
+                    </li>
+
+                    <li class="contact__form-field">
+                        <label for="phone" class="contact__form-label">Phone: <span>*</span></label>
+                        <input class="contact__form-input" id="phone" name="phone" type="text" placeholder="Please enter your Phone No.">
+                        <div class="phone-error error"></div>
+                    </li>
+
+                    <li class="contact__form-field">
+                        <label class="contact__form-label">Do you have any website? <span>*</span></label>
+                        <div class="contact__form-radios">
+                            <div class="contact__form-radio">
+                                <input value="1" type="radio" name="website" id="yes"> 
+                                <label for="yes">Yes</label>
+                            </div>
+
+                            <div class="contact__form-radio">
+                                <input value="0" type="radio" name="website" id="no"> 
+                                <label for="no">No</label>
+                            </div>
+                           
+                        </div>
+                        <div class="website-error error"></div>
+                    </li>
+
+                    <li class="contact__form-field">
+                        <label for="url" class="contact__form-label">Website URL: <span>*</span></label>
+                        <input class="contact__form-input" id="url" name="url" type="text" placeholder="Please enter your Website URL">
+                        <div class="url-error error"></div>
+                    </li>
+                </ul>
+
+                <button id="submit__button">SUBMIT</button>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-body">All Right Reserved | <a href="#">Innovfide Technologies</a>  | 2022</div>
+    </footer>
+
+<script>
+    const submitButton = document.getElementById('submit__button');
+    submitButton.addEventListener('click',(e)=>{
+        e.preventDefault();
+        const firstName = document.getElementById('first_name');
+        const lastName =  document.getElementById('last_name');
+        const email =  document.getElementById('email');
+        const phone =  document.getElementById('phone');
+        const isWebsite =  document.querySelectorAll('input[name="website"]');
+        const isWebsiteArray = [...isWebsite];
+        const url =  document.getElementById('url');
+        let isAllInputValid = false;
+
+        if(firstName.value == ''){
+            document.querySelector('.first_name-error').innerHTML = 'First Name is required.';
+        }
+        else{
+            document.querySelector('.first_name-error').innerHTML = '';
+            let pattern = /^[a-zA-Z ]*$/;
+            let check = firstName.value.match(pattern);
+            if(!check){
+                document.querySelector('.first_name-error').innerHTML = 'Please enter a valid value.';
+            }
+        }
+
+        if(lastName.value == ''){
+            document.querySelector('.last_name-error').innerHTML = 'Last Name is required.';
+        } else{
+            document.querySelector('.last_name-error').innerHTML = '';
+            let pattern = /^[a-zA-Z ]*$/;
+            let check = lastName.value.match(pattern);
+            if(!check){
+                document.querySelector('.last_name-error').innerHTML = 'Please enter a valid value.';
+            }
+        }
+
+        if(email.value == ''){
+            document.querySelector('.email-error').innerHTML = 'Email is required.'
+        } else{
+            document.querySelector('.email-error').innerHTML = ''
+            
+            let pattern = "^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"
+            let check = email.value.match(pattern);
+            if(!check){
+                document.querySelector('.email-error').innerHTML = 'Please enter a valid email.';
+            }
+        }
+        
+        if(phone.value == ''){
+            document.querySelector('.phone-error').innerHTML = 'Phone is required.'
+        } else{
+            document.querySelector('.phone-error').innerHTML = '';
+            
+            let pattern = /^(\+|\d)[0-9]{7,16}$/;
+            let check = phone.value.match(pattern);
+            if(!check){
+                document.querySelector('.phone-error').innerHTML = 'Please enter a valid phone with country code.';
+            }
+        }
+
+        if(!isWebsite[0].checked && !isWebsite[1].checked){
+            document.querySelector('.website-error').innerHTML = 'This field is required.'
+        } else{
+            document.querySelector('.website-error').innerHTML = '';
+        }
+
+        if(url.value == '' && isWebsite[0].checked){
+            document.querySelector('.url-error').innerHTML = 'URL is required.'
+        }else if(isWebsite[1].checked){
+            document.querySelector('.url-error').innerHTML = '';
+        }else{
+            document.querySelector('.url-error').innerHTML = '';
+            let pattern = /(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g;
+            let check = url.value.match(pattern);
+            if(!check){
+                document.querySelector('.url-error').innerHTML = 'Please enter a valid URL.';
+            }else{
+                document.querySelector('.url-error').innerHTML = '';
+            }
+        }
+
+        if(firstName.value && lastName.value && email.value && phone.value && (isWebsite[0].checked || isWebsite[1].checked) && (isWebsite[0].checked ? (url.value ? true : false) : true)){
+            isAllInputValid = true;
+        }
+
+        if(isAllInputValid){
+                console.log("DSdsd");
+                alert("submitted");
+        }
+    })
+
+    function submitForm(e){
+        e.preventDefault();
+        console.log("Sdsdhellllloooo");
+    }
+</script>
+</body>
+</html>

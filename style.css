@@ -1,0 +1,243 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary : #1694D3;
+    --text-primary : #000000;
+    --text-secondary : #5e5c5c;
+    --text-light :  #ffffff;
+    --btn-primary :  #FF914D;
+}
+
+a{
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+
+html{
+    font-size: 62.5%; 
+}
+
+header{
+    padding: 2rem 0;
+    /* background-color: bisque; */
+}
+
+.primary-nav, .secondary-nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 135rem;
+    margin: 0 auto;
+}
+
+.primary-nav ul,
+.secondary-nav ul{
+    list-style: none;
+    display: flex;
+}
+
+nav ul li a{
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 2rem;
+    font-family: sans-serif;
+    padding: 2rem;
+}
+
+.active a{
+    text-decoration: underline;
+    color: var(--primary);
+}
+
+.logo img{
+    width: 15rem;
+    height: 5rem;
+}
+
+.secondary-header{
+    padding: 3rem 0rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary);
+}
+
+.secondary-header h1{
+    color: var(--text-light);
+    font-family: sans-serif;
+    font-weight: 500;
+    font-size: 3rem;
+}
+
+.secondary-nav ul li a{
+    padding: 0.5rem;
+    font-size: 1.8rem;
+    color: var(--text-light);
+}
+
+.contact{
+    display: flex;
+    width: 90%;
+    max-width: 135rem;
+    margin: 0 auto;
+    font-family: sans-serif;
+    min-height: 85vh;
+}
+.contact__content{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 5rem 0rem;
+}
+
+.contact__content:nth-child(1){
+    border-right: 4px dashed rgb(0,0,0,0.2);
+}
+
+.contact__content h2{
+    font-size: 4rem;
+    font-weight: 100;
+    padding-bottom: 1rem;
+}
+
+.contact__content h3{
+    color: var(--text-secondary);
+    font-weight: 100;
+    font-size: 1.6rem;
+    padding-bottom: 5rem;
+}
+
+.contact__cards{
+    width: 100%;
+}
+.contact__cards li{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+.contact__cards li img{
+    width: 5rem; 
+    height: 5rem;
+    margin-right: 2rem;
+}
+
+.contact__cards li p{
+    font-size: 1.6rem;
+    color: var(--text-secondary);
+}
+
+#contact__form{
+    width: 100%;
+    padding-left: 8rem;
+
+}
+
+.contact__form-fields{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(auto-fill, minmax(22rem,1fr));
+    grid-gap: 3rem;
+}
+
+.contact__content:nth-child(2){
+    display: block;
+}
+
+.contact__form-field{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact__form-input{
+    padding: 1rem 0.5rem;
+    border: 1px solid rgb(0,0,0,0.2);
+    outline: none;
+    width: 80%;
+    font-size: 1.4rem;
+}
+
+::placeholder{
+    color: #b1aeae;
+}
+
+.error{
+    color: red;
+    margin-top: 10px;
+    font-size: 1.4rem;
+}
+
+.contact__form-input:focus,.contact__form-input:focus-within{
+    border: 1px solid rgb(0,0,0,0.5);
+}
+
+.contact__form-label{
+    margin-bottom: 1rem;
+    font-size: 1.6rem;
+}
+
+.contact__form-label span{
+    color: red;
+}
+
+.contact__form-field:nth-child(5){
+    grid-column: 1/-1;
+}
+
+.contact__form-radios,
+.contact__form-radio{
+    display: flex;
+}
+.contact__form-radio{
+    align-items: center;
+    font-size: 1.6rem;
+}
+.contact__form-radio input{
+    margin-right: 1rem;
+}
+.contact__form-radio:nth-child(1){
+    margin-right: 2rem;
+}
+
+#submit__button{
+    background-color: var(--btn-primary);
+    color: var(--text-light);
+    padding: 1.3rem;
+    width: 150px;
+    margin-top: 3rem;
+    font-weight: 700;
+    font-size: 1.8rem;
+    border: none;
+}
+
+footer{
+    padding: 2rem 0;
+    font-size: 1.6rem;
+    border-top: 2px solid #cccccc;
+}
+.footer-body{
+    width: 90%;
+    max-width: 135rem;
+    margin: 0 auto;
+}
+
+.footer-body a{
+    text-decoration: none;
+    color: var(--primary);
+}
+
+.footer-body a:hover{
+    text-decoration: underline;
+}
